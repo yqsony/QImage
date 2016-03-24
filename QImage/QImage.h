@@ -10,11 +10,12 @@
 #define QImage_h
 
 #include <stdio.h>
-
-void 
-
+#include <stdlib.h>
 
 
+
+void calculate_line_segments(uint8_t* im, size_t width, size_t height, size_t blockSize,
+                             float * outputLines, size_t* numLines);
 
 
 
