@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1486D84C1CACDE1E00715FC2 /* QCLUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 1486D84A1CACDE1E00715FC2 /* QCLUtils.c */; };
 		148946551C3A15300064EC51 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 148946541C3A15300064EC51 /* main.c */; };
-		1489465D1C3A155A0064EC51 /* QImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 1489465B1C3A155A0064EC51 /* QImage.c */; };
+		14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220851DA1B4AA000E6C42 /* QImage.cpp */; };
+		14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,10 @@
 		1486D84B1CACDE1E00715FC2 /* QCLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QCLUtils.h; path = ../QImage/QCLUtils.h; sourceTree = "<group>"; };
 		148946511C3A15300064EC51 /* QImageTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QImageTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		148946541C3A15300064EC51 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		1489465B1C3A155A0064EC51 /* QImage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = QImage.c; path = ../QImage/QImage.c; sourceTree = "<group>"; };
-		1489465C1C3A155A0064EC51 /* QImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QImage.h; path = ../QImage/QImage.h; sourceTree = "<group>"; };
+		14C220851DA1B4AA000E6C42 /* QImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QImage.cpp; path = ../QImage/QImage.cpp; sourceTree = "<group>"; };
+		14C220861DA1B4AA000E6C42 /* QImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = QImage.hpp; path = ../QImage/QImage.hpp; sourceTree = "<group>"; };
+		14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QFrameCompare.cpp; path = ../QImage/QFrameCompare.cpp; sourceTree = "<group>"; };
+		14C2208A1DA1B5B4000E6C42 /* QFrameCompare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = QFrameCompare.hpp; path = ../QImage/QFrameCompare.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +49,9 @@
 		148946481C3A15300064EC51 = {
 			isa = PBXGroup;
 			children = (
-				1486D84A1CACDE1E00715FC2 /* QCLUtils.c */,
-				1486D84B1CACDE1E00715FC2 /* QCLUtils.h */,
-				1489465B1C3A155A0064EC51 /* QImage.c */,
-				1489465C1C3A155A0064EC51 /* QImage.h */,
+				14C2208C1DA1B880000E6C42 /* OpenCL */,
+				14C220881DA1B5A4000E6C42 /* QFrameCompare */,
+				14C220841DA1B48E000E6C42 /* QImage */,
 				148946531C3A15300064EC51 /* QImageTest */,
 				148946521C3A15300064EC51 /* Products */,
 			);
@@ -70,6 +71,33 @@
 				148946541C3A15300064EC51 /* main.c */,
 			);
 			path = QImageTest;
+			sourceTree = "<group>";
+		};
+		14C220841DA1B48E000E6C42 /* QImage */ = {
+			isa = PBXGroup;
+			children = (
+				14C220851DA1B4AA000E6C42 /* QImage.cpp */,
+				14C220861DA1B4AA000E6C42 /* QImage.hpp */,
+			);
+			name = QImage;
+			sourceTree = "<group>";
+		};
+		14C220881DA1B5A4000E6C42 /* QFrameCompare */ = {
+			isa = PBXGroup;
+			children = (
+				14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */,
+				14C2208A1DA1B5B4000E6C42 /* QFrameCompare.hpp */,
+			);
+			name = QFrameCompare;
+			sourceTree = "<group>";
+		};
+		14C2208C1DA1B880000E6C42 /* OpenCL */ = {
+			isa = PBXGroup;
+			children = (
+				1486D84A1CACDE1E00715FC2 /* QCLUtils.c */,
+				1486D84B1CACDE1E00715FC2 /* QCLUtils.h */,
+			);
+			name = OpenCL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				148946551C3A15300064EC51 /* main.c in Sources */,
-				1489465D1C3A155A0064EC51 /* QImage.c in Sources */,
-				1486D84C1CACDE1E00715FC2 /* QCLUtils.c in Sources */,
+				14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */,
+				14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
