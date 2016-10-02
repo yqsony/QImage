@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1486D84C1CACDE1E00715FC2 /* QCLUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 1486D84A1CACDE1E00715FC2 /* QCLUtils.c */; };
 		148946551C3A15300064EC51 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 148946541C3A15300064EC51 /* main.c */; };
 		1489465D1C3A155A0064EC51 /* QImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 1489465B1C3A155A0064EC51 /* QImage.c */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1486D84A1CACDE1E00715FC2 /* QCLUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = QCLUtils.c; path = ../QImage/QCLUtils.c; sourceTree = "<group>"; };
+		1486D84B1CACDE1E00715FC2 /* QCLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QCLUtils.h; path = ../QImage/QCLUtils.h; sourceTree = "<group>"; };
 		148946511C3A15300064EC51 /* QImageTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QImageTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		148946541C3A15300064EC51 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		1489465B1C3A155A0064EC51 /* QImage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = QImage.c; path = ../QImage/QImage.c; sourceTree = "<group>"; };
@@ -44,6 +47,8 @@
 		148946481C3A15300064EC51 = {
 			isa = PBXGroup;
 			children = (
+				1486D84A1CACDE1E00715FC2 /* QCLUtils.c */,
+				1486D84B1CACDE1E00715FC2 /* QCLUtils.h */,
 				1489465B1C3A155A0064EC51 /* QImage.c */,
 				1489465C1C3A155A0064EC51 /* QImage.h */,
 				148946531C3A15300064EC51 /* QImageTest */,
@@ -125,6 +130,7 @@
 			files = (
 				148946551C3A15300064EC51 /* main.c in Sources */,
 				1489465D1C3A155A0064EC51 /* QImage.c in Sources */,
+				1486D84C1CACDE1E00715FC2 /* QCLUtils.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +247,7 @@
 				1489465A1C3A15300064EC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
