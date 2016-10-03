@@ -16,8 +16,8 @@
 namespace QImage{
     struct LineSegment{
         size_t x0, y0, x1, y1;
+        float weight;
     };
-    
     
     template <class T>
     struct QImageBuffer{
@@ -31,13 +31,12 @@ namespace QImage{
     
     template <class T>
     void freeImageBuffer(QImageBuffer<T>& im);
-    
-    
+    // gradients and line segments
     LineSegment computeLineSegmentsInBlock(QImageBuffer<uint8_t>);
     void computeDxImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& dxIm);
     void computeDyImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& dyIm);
     void computeEdgeImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& edgeIm);
-    std::vector<LineSegment> computeLineSegments(QImageBuffer<uint8_t>& im);
+    std::vector<LineSegment> computeLineSegments(QImageBuffer<uint8_t>& im, uint8_t block_size);
     
 }
 

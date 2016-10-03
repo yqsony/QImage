@@ -17,8 +17,6 @@ using namespace QImage;
 namespace QFrames{
     
     
-    
-    
     class QFrameCompare{
     public:
         QFrameCompare(){};
