@@ -146,7 +146,6 @@ namespace QImage{
                 }
             }
         }
-        
         return sticks;
     }
     
