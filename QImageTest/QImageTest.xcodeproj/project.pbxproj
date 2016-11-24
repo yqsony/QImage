@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		148946551C3A15300064EC51 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 148946541C3A15300064EC51 /* main.c */; };
+		14AA74161DE3A20000BBA455 /* QImageUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AA74141DE3A20000BBA455 /* QImageUtils.cpp */; };
+		14AA741A1DE61EF600BBA455 /* test1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74181DE61ED400BBA455 /* test1.bmp */; };
+		14AA74221DE61F2100BBA455 /* QImageTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AA74211DE61F2100BBA455 /* QImageTests.mm */; };
+		14AA74271DE61FDB00BBA455 /* test1.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74181DE61ED400BBA455 /* test1.bmp */; };
+		14AA74281DE6209D00BBA455 /* QImageUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AA74141DE3A20000BBA455 /* QImageUtils.cpp */; };
+		14AA742A1DE624D400BBA455 /* testGray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74291DE624D400BBA455 /* testGray.bmp */; };
+		14AA742B1DE624E200BBA455 /* testGray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74291DE624D400BBA455 /* testGray.bmp */; };
 		14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220851DA1B4AA000E6C42 /* QImage.cpp */; };
 		14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */; };
 /* End PBXBuildFile section */
@@ -29,6 +36,13 @@
 		1486D84B1CACDE1E00715FC2 /* QCLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QCLUtils.h; path = ../QImage/QCLUtils.h; sourceTree = "<group>"; };
 		148946511C3A15300064EC51 /* QImageTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = QImageTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		148946541C3A15300064EC51 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		14AA74141DE3A20000BBA455 /* QImageUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QImageUtils.cpp; path = ../QImage/QImageUtils.cpp; sourceTree = "<group>"; };
+		14AA74151DE3A20000BBA455 /* QImageUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = QImageUtils.hpp; path = ../QImage/QImageUtils.hpp; sourceTree = "<group>"; };
+		14AA74181DE61ED400BBA455 /* test1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = test1.bmp; path = ../../data/test1.bmp; sourceTree = "<group>"; };
+		14AA741F1DE61F2100BBA455 /* QImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14AA74211DE61F2100BBA455 /* QImageTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QImageTests.mm; sourceTree = "<group>"; };
+		14AA74231DE61F2100BBA455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14AA74291DE624D400BBA455 /* testGray.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = testGray.bmp; path = ../../data/testGray.bmp; sourceTree = "<group>"; };
 		14C220851DA1B4AA000E6C42 /* QImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QImage.cpp; path = ../QImage/QImage.cpp; sourceTree = "<group>"; };
 		14C220861DA1B4AA000E6C42 /* QImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = QImage.hpp; path = ../QImage/QImage.hpp; sourceTree = "<group>"; };
 		14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QFrameCompare.cpp; path = ../QImage/QFrameCompare.cpp; sourceTree = "<group>"; };
@@ -37,6 +51,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1489464E1C3A15300064EC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AA741C1DE61F2100BBA455 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +74,7 @@
 				14C220881DA1B5A4000E6C42 /* QFrameCompare */,
 				14C220841DA1B48E000E6C42 /* QImage */,
 				148946531C3A15300064EC51 /* QImageTest */,
+				14AA74201DE61F2100BBA455 /* QImageTests */,
 				148946521C3A15300064EC51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				148946511C3A15300064EC51 /* QImageTest */,
+				14AA741F1DE61F2100BBA455 /* QImageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,9 +91,28 @@
 		148946531C3A15300064EC51 /* QImageTest */ = {
 			isa = PBXGroup;
 			children = (
+				14AA74171DE61EA000BBA455 /* resources */,
 				148946541C3A15300064EC51 /* main.c */,
 			);
 			path = QImageTest;
+			sourceTree = "<group>";
+		};
+		14AA74171DE61EA000BBA455 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				14AA74291DE624D400BBA455 /* testGray.bmp */,
+				14AA74181DE61ED400BBA455 /* test1.bmp */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		14AA74201DE61F2100BBA455 /* QImageTests */ = {
+			isa = PBXGroup;
+			children = (
+				14AA74211DE61F2100BBA455 /* QImageTests.mm */,
+				14AA74231DE61F2100BBA455 /* Info.plist */,
+			);
+			path = QImageTests;
 			sourceTree = "<group>";
 		};
 		14C220841DA1B48E000E6C42 /* QImage */ = {
@@ -87,6 +129,8 @@
 			children = (
 				14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */,
 				14C2208A1DA1B5B4000E6C42 /* QFrameCompare.hpp */,
+				14AA74141DE3A20000BBA455 /* QImageUtils.cpp */,
+				14AA74151DE3A20000BBA455 /* QImageUtils.hpp */,
 			);
 			name = QFrameCompare;
 			sourceTree = "<group>";
@@ -110,6 +154,7 @@
 				1489464D1C3A15300064EC51 /* Sources */,
 				1489464E1C3A15300064EC51 /* Frameworks */,
 				1489464F1C3A15300064EC51 /* CopyFiles */,
+				14AA74191DE61EEF00BBA455 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -119,6 +164,23 @@
 			productName = QImageTest;
 			productReference = 148946511C3A15300064EC51 /* QImageTest */;
 			productType = "com.apple.product-type.tool";
+		};
+		14AA741E1DE61F2100BBA455 /* QImageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14AA74241DE61F2100BBA455 /* Build configuration list for PBXNativeTarget "QImageTests" */;
+			buildPhases = (
+				14AA741B1DE61F2100BBA455 /* Sources */,
+				14AA741C1DE61F2100BBA455 /* Frameworks */,
+				14AA741D1DE61F2100BBA455 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QImageTests;
+			productName = QImageTests;
+			productReference = 14AA741F1DE61F2100BBA455 /* QImageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -131,6 +193,10 @@
 				TargetAttributes = {
 					148946501C3A15300064EC51 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					14AA741E1DE61F2100BBA455 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -147,9 +213,31 @@
 			projectRoot = "";
 			targets = (
 				148946501C3A15300064EC51 /* QImageTest */,
+				14AA741E1DE61F2100BBA455 /* QImageTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14AA74191DE61EEF00BBA455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AA741A1DE61EF600BBA455 /* test1.bmp in Resources */,
+				14AA742A1DE624D400BBA455 /* testGray.bmp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AA741D1DE61F2100BBA455 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AA74271DE61FDB00BBA455 /* test1.bmp in Resources */,
+				14AA742B1DE624E200BBA455 /* testGray.bmp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1489464D1C3A15300064EC51 /* Sources */ = {
@@ -157,8 +245,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				148946551C3A15300064EC51 /* main.c in Sources */,
+				14AA74161DE3A20000BBA455 /* QImageUtils.cpp in Sources */,
 				14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */,
 				14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14AA741B1DE61F2100BBA455 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14AA74221DE61F2100BBA455 /* QImageTests.mm in Sources */,
+				14AA74281DE6209D00BBA455 /* QImageUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +358,38 @@
 			};
 			name = Release;
 		};
+		14AA74251DE61F2100BBA455 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = QImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = Q.QImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14AA74261DE61F2100BBA455 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = QImageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = Q.QImageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -280,6 +410,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		14AA74241DE61F2100BBA455 /* Build configuration list for PBXNativeTarget "QImageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14AA74251DE61F2100BBA455 /* Debug */,
+				14AA74261DE61F2100BBA455 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

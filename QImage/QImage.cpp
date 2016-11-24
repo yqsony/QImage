@@ -16,14 +16,11 @@ using namespace QImage;
 #define GRADIENT_INTENSITY_TH 8  //threshold of gradient intensity to be considered in a stick
 #define MAX_STICK_RANSAC_ATTEMPT 64 //max number of ransac trials
 #define EDGE_RANDOM_PRIME_BASE 7901 //base for edge random
+#define EDGE_WIDTH_DISTANCE 1.5 // edge distance to center
 
 
 namespace QImage{
     
-    size_t edgeRandom(size_t seed=0){
-        static size_t r = seed;
-        return edgeRandom
-    }
     
     template <class T>
     QImageBuffer<T> allocImageBuffer(int width, int height, int rowBytes){
@@ -79,9 +76,32 @@ namespace QImage{
         }
     }
 
-    inline LineSegment computeStickWeight(std::vector<std::tuple<size_t, size_t, float>>& edgePoints, size_t i, size_t j){
+    inline LineSegment computeStickWeight(std::vector<std::tuple<int, int, float>>& edgePoints, size_t i, size_t j){
         LineSegment l;
-        //todo: computer stick weight with a kernel
+        //define an edge fill-up buffer
+        uint8_t *edge_fill_buffer
+        
+        //todo: compute stick weight with a kernel
+        std::pair<int, int> r;
+        r.first = std::get<0>(edgePoints[i]);
+        r.second = std::get<1>(edgePoints[i]);
+        float dx = std::get<0>(edgePoints[i]) - std::get<0>(edgePoints[j]);
+        float dy = std::get<1>(edgePoints[i]) - std::get<1>(edgePoints[j]);
+        float dn = sqrtf(dx*dx+dy*dy);
+        assert(dn > 0.0f);
+        dx /= dn;
+        dy /= dn;
+        l.weight = 0;
+        for(size_t pi=0;pi<edgePoints.size();pi++){
+            //todo: compute distance to center line, find start and end of l
+            float xd = std::get<0>(edgePoints[pi]) - r.first;
+            float yd = std::get<1>(edgePoints[pi]) - r.second;
+            float d2line = sqrtf(xd*xd+yd*yd);
+            if(d2line<EDGE_WIDTH_DISTANCE){
+                continue;
+            }
+        }
+        
         return l;
     }
     
@@ -89,7 +109,7 @@ namespace QImage{
         LineSegment stick = {.x0=0, .x1=0, .y0=0, .y1=0, .weight=-1.0f};
         
         // get edge points
-        std::vector<std::tuple<size_t, size_t, float>> edgePoints;
+        std::vector<std::tuple<int, int, float>> edgePoints;
         for(size_t i=yStart;i<yStart+block_size;i++){
             for(size_t j=xStart;j<xStart+block_size;j++){
                 if(gradIm.data[i*gradIm.rowBytes+j]>= GRADIENT_INTENSITY_TH){
@@ -101,8 +121,8 @@ namespace QImage{
             // simple ransac to find a line
             float maxStickWeight=0.0f;
             for(size_t r=0;r<MAX_STICK_RANSAC_ATTEMPT;r++){
-                size_t i = rand()%edgePoints.size();
-                size_t j = rand()%edgePoints.size();
+                int i = rand()%edgePoints.size();
+                int j = rand()%edgePoints.size();
                 LineSegment stickTmp = computeStickWeight(edgePoints, i, j);
                 if(stickTmp.weight > maxStickWeight){
                     maxStickWeight = stickTmp.weight;
@@ -115,7 +135,7 @@ namespace QImage{
     }
     
     std::vector<LineSegment> computeLineSegments(QImageBuffer<uint8_t>& gradIm, size_t block_size, float overlap){
-        srand (0); // init random numbers
+        //srand (0); // init random numbers
         std::vector<LineSegment> sticks;
         size_t overlapSize = (size_t)round(block_size*overlap);
         for(size_t i=0;i<gradIm.height;i+=overlapSize){

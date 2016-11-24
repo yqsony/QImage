@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>QImageTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>148946501C3A15300064EC51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14AA741E1DE61F2100BBA455</key>
 		<dict>
 			<key>primary</key>
 			<true/>
