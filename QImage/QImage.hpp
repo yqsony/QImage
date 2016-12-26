@@ -12,32 +12,31 @@
 #include <stdio.h>
 #include <cstdint>
 #include <vector>
+#include "QSticks.hpp"
+
 
 namespace QImage{
-    struct LineSegment{
-        size_t x0, y0, x1, y1;
-        float weight;
-    };
     
     template <class T>
     struct QImageBuffer{
         QImageBuffer(){data=nullptr; width=0; height=0; rowBytes=0;};
+        QImageBuffer(T* d, size_t w, size_t h, size_t rb){data=d; width=w; height=h; rowBytes=rb;};
         T * data;
         size_t width, height, rowBytes;
     };
     
     template <class T>
-    QImageBuffer<T> allocImageBuffer(int width, int height, int rowBytes);
+    QImageBuffer<T> allocImageBuffer(size_t width, size_t height, size_t rowBytes);
     
     template <class T>
     void freeImageBuffer(QImageBuffer<T>& im);
+    
     // gradients and line segments
-    LineSegment computeLineSegmentsInBlock(QImageBuffer<uint8_t>);
+    
     void computeDxImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& dxIm);
     void computeDyImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& dyIm);
-    void computeEdgeImage(QImageBuffer<uint8_t>& im, QImageBuffer<int8_t>& edgeIm);
-    std::vector<LineSegment> computeLineSegments(QImageBuffer<uint8_t>& im, uint8_t block_size);
-    
+    void computeEdgeIntensity(QImageBuffer<int8_t>& dxIm, QImageBuffer<int8_t>& dyIm, QImageBuffer<uint8_t>& edgeIntensity);
+        
 }
 
 #endif /* QImage_hpp */

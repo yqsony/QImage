@@ -13,7 +13,13 @@
 
 namespace QImage{
     namespace utils{
-        
+        int loadPPMRowWidthHeight(std::string bmpFileName, int& width, int& height){
+            FILE *f = fopen(bmpFileName.c_str(),"rb");
+            
+            
+            fclose(f);
+            return 0;
+        }
         
         int loadBmpWidthHeightChannels(std::string bmpFileName, int& width, int& height, int& nch, uint8_t* data){
             BMPFILEHEADER bitmapFileHeader;
@@ -31,13 +37,14 @@ namespace QImage{
                 height = bitmapInfoHeader.biHeight;
                 int bitCount = bitmapInfoHeader.biBitCount;
                 nch = bitCount/8;
+                
                 if(data){
                     fseek(f, bitmapFileHeader.offset, SEEK_SET); //bitmapFileHeader.offset
                     if(height > 0){ //bottom up bmp
-                        uint8_t *p = data+width*(height-1); //last row to first row
+                        uint8_t *p = data+width*nch*(height-1); //last row to first row
                         for(size_t i=0;i<height;i++){
-                            size_t t = fread(p, sizeof(uint8_t), width,f); //read from last row to first row
-                            assert(t == width);
+                            size_t t = fread(p, sizeof(uint8_t), width*nch,f); //read from last row to first row
+                            assert(t == width*nch);
                             fseek(f, (4-(width*nch)%4)%4, SEEK_CUR);
                             p -= width;
                         }
@@ -47,8 +54,8 @@ namespace QImage{
                     else{ //height < 0, top down bmp
                         uint8_t *p = data; //top row to bottm row
                         for(size_t i=0;i<-height;i++){
-                            size_t t = fread(p, sizeof(uint8_t), width,f); //read from last row to first row
-                            assert(t == width);
+                            size_t t = fread(p, sizeof(uint8_t), width*nch,f); //read from last row to first row
+                            assert(t == width*nch);
                             fseek(f, (4-(width*nch)%4)%4, SEEK_CUR);
                             p += width;
                         }
@@ -104,6 +111,70 @@ namespace QImage{
             return 0;
         }
 
+        void write2BMP3(const uint8_t* data, int width, int height, std::string bmpFile){
+            uint8_t * bmpData = (uint8_t*)malloc(width*height*3);
+            for(size_t i=0;i<width*height;i++){
+                for(size_t k=0;k<3;k++){
+                    bmpData[i*3+k] = data[i];
+                }
+            }
+            write2BMP(bmpData, width, height, 3, bmpFile);
+            free(bmpData);
+            
+        }
+
+        void writeStickToData(const LineSegment& stick, uint8_t *data, int w, int h){
+            float dx = stick.x1 - stick.x0;
+            float dy = stick.y1 - stick.y0;
+            float len = sqrtf(dx*dx + dy*dy)+1e-5;
+            dx /= len;
+            dy /= len;
+            for(float i=0;i<len;i+=0.5){
+                float x = stick.x0 + dx*i;
+                float y = stick.y0 + dy*i;
+                float px = floorf(x);
+                float py = floorf(y);
+                if(px>=0 && py>=0){
+                    data[(int)py*w+(int)px] = std::max(data[(int)py*w+(int)px],(uint8_t)((1-(x-px))*(1-(y-py))*255));
+                }
+                px = ceilf(x);
+                if(px < w && py>=0){
+                    data[(int)py*w+(int)px] = std::max(data[(int)py*w+(int)px],(uint8_t)((1-(px-x))*(1-(y-py))*255));
+                }
+                py = ceilf(y);
+                if(px < w && py <h){
+                    data[(int)py*w+(int)px] = std::max(data[(int)py*w+(int)px],(uint8_t)((1-(px-x))*(1-(py-y))*255));
+                }
+                px = floorf(x);
+                if(px >=0 && py <h){
+                    data[(int)py*w+(int)px] = std::max(data[(int)py*w+(int)px],(uint8_t)((1-(x-px))*(1-(py-y))*255));
+                }
+            }
+            
+        }
+        
+        void writeLineStick2BMP(std::vector<LineSegment> sticks, const uint8_t* data, int w, int h,
+                                std::string bmpFileName){
+            
+            if(data==nullptr){
+                uint8_t* outputData;
+                outputData = new uint8_t[w*h];
+                memset(outputData, 0, w*h);
+                for(size_t i=0;i<sticks.size();i++){
+                    writeStickToData(sticks[i], outputData, w, h);
+                }
+                write2BMP3(outputData, w, h, bmpFileName);
+                delete [] outputData;
+            }
+            else{
+            
+            }
+            
+            
+        }
+        
+        
+        
         HoughLines::HoughLines(size_t w, size_t h){
             mMapAngleMax = w;
             mMapPhoMax = h;
@@ -125,7 +196,7 @@ namespace QImage{
             float angle = atan2f(dy, dx);
             // range in within pi/2
             
-            for(float a = angle-M_PI_4;a<angle-M_PI_4;a+=0.1){
+            for(float a = angle-M_PI_4;a<angle-M_PI_4;a+=M_PI/HOUGH_ANGLE_BINS){
                 float r = x*cosf(a)+y*sinf(a);
                 std::tuple<float, float, float> p = std::make_tuple(r, a, weight);
                 this->addPoint(p);

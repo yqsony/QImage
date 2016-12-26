@@ -12,6 +12,10 @@
 #include <stdio.h>
 #include <vector>
 #include <string>
+#include "QSticks.hpp"
+#include "QImage.hpp"
+
+#define HOUGH_ANGLE_BINS 180
 
 namespace QImage{
     namespace utils{
@@ -44,10 +48,12 @@ namespace QImage{
         int loadBmpWidthHeightChannels(std::string bmpFileName, int& width, int& height, int& channels, uint8_t* data);
         //write to bmp image
         int write2BMP(uint8_t* data,int w,int h, int nch, std::string bmpFileName);
-        
+        void write2BMP3(const uint8_t* data, int width, int height, std::string bmpFile);
+        void writeLineStick2BMP(std::vector<LineSegment> sticks, const uint8_t*data, int w, int h, std::string bmpFileName);
+        void writeStickToData(const LineSegment& stick, uint8_t *data, int w, int h);
         class HoughLines{
         public:
-            HoughLines(size_t w, size_t h);
+            HoughLines(size_t mapWidth, size_t mapHeight);
             ~HoughLines();
             // add an edge point and cast vote on hough map
             void  addEdgePoint(size_t x, size_t y, float dx, float dy);

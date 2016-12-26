@@ -15,6 +15,19 @@
 		14AA74281DE6209D00BBA455 /* QImageUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AA74141DE3A20000BBA455 /* QImageUtils.cpp */; };
 		14AA742A1DE624D400BBA455 /* testGray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74291DE624D400BBA455 /* testGray.bmp */; };
 		14AA742B1DE624E200BBA455 /* testGray.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14AA74291DE624D400BBA455 /* testGray.bmp */; };
+		14AA742E1DE6882B00BBA455 /* QSticksFromImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AA742C1DE6882B00BBA455 /* QSticksFromImage.cpp */; };
+		14B731D81E0CBA280048821A /* testPatch.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731D71E0CBA280048821A /* testPatch.bmp */; };
+		14B731D91E0CBA310048821A /* testPatch.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731D71E0CBA280048821A /* testPatch.bmp */; };
+		14B731DA1E0CBAC70048821A /* QImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220851DA1B4AA000E6C42 /* QImage.cpp */; };
+		14B731DF1E0E193D0048821A /* QSticks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B731DD1E0E193D0048821A /* QSticks.cpp */; };
+		14B731E01E0E193D0048821A /* QSticks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14B731DD1E0E193D0048821A /* QSticks.cpp */; };
+		14B731E11E0E1A230048821A /* QSticksFromImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14AA742C1DE6882B00BBA455 /* QSticksFromImage.cpp */; };
+		14B731E31E109FBD0048821A /* 8x8.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731E21E109FBD0048821A /* 8x8.bmp */; };
+		14B731E41E109FBD0048821A /* 8x8.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731E21E109FBD0048821A /* 8x8.bmp */; };
+		14B731E61E10A9500048821A /* testPatch.ppm in Resources */ = {isa = PBXBuildFile; fileRef = 14B731E51E10A9500048821A /* testPatch.ppm */; };
+		14B731E71E10A9500048821A /* testPatch.ppm in Resources */ = {isa = PBXBuildFile; fileRef = 14B731E51E10A9500048821A /* testPatch.ppm */; };
+		14B731F31E10F8330048821A /* H.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731F21E10F8330048821A /* H.bmp */; };
+		14B731F41E10F8330048821A /* H.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 14B731F21E10F8330048821A /* H.bmp */; };
 		14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220851DA1B4AA000E6C42 /* QImage.cpp */; };
 		14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */; };
 /* End PBXBuildFile section */
@@ -43,6 +56,14 @@
 		14AA74211DE61F2100BBA455 /* QImageTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QImageTests.mm; sourceTree = "<group>"; };
 		14AA74231DE61F2100BBA455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14AA74291DE624D400BBA455 /* testGray.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = testGray.bmp; path = ../../data/testGray.bmp; sourceTree = "<group>"; };
+		14AA742C1DE6882B00BBA455 /* QSticksFromImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QSticksFromImage.cpp; sourceTree = "<group>"; };
+		14AA742D1DE6882B00BBA455 /* QSticksFromImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QSticksFromImage.hpp; sourceTree = "<group>"; };
+		14B731D71E0CBA280048821A /* testPatch.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = testPatch.bmp; path = ../../data/testPatch.bmp; sourceTree = "<group>"; };
+		14B731DD1E0E193D0048821A /* QSticks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QSticks.cpp; sourceTree = "<group>"; };
+		14B731DE1E0E193D0048821A /* QSticks.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QSticks.hpp; sourceTree = "<group>"; };
+		14B731E21E109FBD0048821A /* 8x8.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = 8x8.bmp; path = ../../data/8x8.bmp; sourceTree = "<group>"; };
+		14B731E51E10A9500048821A /* testPatch.ppm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testPatch.ppm; path = ../../data/testPatch.ppm; sourceTree = "<group>"; };
+		14B731F21E10F8330048821A /* H.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = H.bmp; path = ../../data/H.bmp; sourceTree = "<group>"; };
 		14C220851DA1B4AA000E6C42 /* QImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QImage.cpp; path = ../QImage/QImage.cpp; sourceTree = "<group>"; };
 		14C220861DA1B4AA000E6C42 /* QImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = QImage.hpp; path = ../QImage/QImage.hpp; sourceTree = "<group>"; };
 		14C220891DA1B5B4000E6C42 /* QFrameCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QFrameCompare.cpp; path = ../QImage/QFrameCompare.cpp; sourceTree = "<group>"; };
@@ -100,6 +121,10 @@
 		14AA74171DE61EA000BBA455 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				14B731F21E10F8330048821A /* H.bmp */,
+				14B731E51E10A9500048821A /* testPatch.ppm */,
+				14B731E21E109FBD0048821A /* 8x8.bmp */,
+				14B731D71E0CBA280048821A /* testPatch.bmp */,
 				14AA74291DE624D400BBA455 /* testGray.bmp */,
 				14AA74181DE61ED400BBA455 /* test1.bmp */,
 			);
@@ -120,6 +145,10 @@
 			children = (
 				14C220851DA1B4AA000E6C42 /* QImage.cpp */,
 				14C220861DA1B4AA000E6C42 /* QImage.hpp */,
+				14AA742C1DE6882B00BBA455 /* QSticksFromImage.cpp */,
+				14AA742D1DE6882B00BBA455 /* QSticksFromImage.hpp */,
+				14B731DD1E0E193D0048821A /* QSticks.cpp */,
+				14B731DE1E0E193D0048821A /* QSticks.hpp */,
 			);
 			name = QImage;
 			sourceTree = "<group>";
@@ -223,8 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B731F31E10F8330048821A /* H.bmp in Resources */,
+				14B731E31E109FBD0048821A /* 8x8.bmp in Resources */,
 				14AA741A1DE61EF600BBA455 /* test1.bmp in Resources */,
 				14AA742A1DE624D400BBA455 /* testGray.bmp in Resources */,
+				14B731E61E10A9500048821A /* testPatch.ppm in Resources */,
+				14B731D81E0CBA280048821A /* testPatch.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,8 +265,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B731F41E10F8330048821A /* H.bmp in Resources */,
+				14B731E41E109FBD0048821A /* 8x8.bmp in Resources */,
 				14AA74271DE61FDB00BBA455 /* test1.bmp in Resources */,
 				14AA742B1DE624E200BBA455 /* testGray.bmp in Resources */,
+				14B731E71E10A9500048821A /* testPatch.ppm in Resources */,
+				14B731D91E0CBA310048821A /* testPatch.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +284,8 @@
 				148946551C3A15300064EC51 /* main.c in Sources */,
 				14AA74161DE3A20000BBA455 /* QImageUtils.cpp in Sources */,
 				14C2208B1DA1B5B4000E6C42 /* QFrameCompare.cpp in Sources */,
+				14AA742E1DE6882B00BBA455 /* QSticksFromImage.cpp in Sources */,
+				14B731DF1E0E193D0048821A /* QSticks.cpp in Sources */,
 				14C220871DA1B4AA000E6C42 /* QImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +296,9 @@
 			files = (
 				14AA74221DE61F2100BBA455 /* QImageTests.mm in Sources */,
 				14AA74281DE6209D00BBA455 /* QImageUtils.cpp in Sources */,
+				14B731E01E0E193D0048821A /* QSticks.cpp in Sources */,
+				14B731E11E0E1A230048821A /* QSticksFromImage.cpp in Sources */,
+				14B731DA1E0CBAC70048821A /* QImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +460,7 @@
 				14AA74261DE61F2100BBA455 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
